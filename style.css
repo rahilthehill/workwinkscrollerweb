@@ -1,31 +1,37 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #000000;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    color: white;
 }
 
 .app-container {
     width: 90%;
     max-width: 400px;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     padding: 20px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(37, 37, 37, 0.533);
+    position: relative;
+    overflow: hidden;
 }
 
 .resume-card {
-    border: 1px solid #e0e0e0;
+    border: 1px solid #000000;
     padding: 20px;
     margin-bottom: 20px;
+    transition: transform 5s ease-out;
 }
 
 .action-buttons {
     display: flex;
     justify-content: space-between;
+    margin: 10px;
 }
 
 .action-button {
@@ -45,4 +51,28 @@ body {
 .dislike {
     background-color: #f44336;
     color: white;
+}
+
+.app-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.resume-card {
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+    will-change: transform, opacity;
+}
+
+.action-button {
+    margin: 10px;
+}
+
+.swipe-right {
+    transform: translateX(150%) rotate(15deg);
+    opacity: 0;
+}
+
+.swipe-left {
+    transform: translateX(-150%) rotate(-15deg);
+    opacity: 0;
 }
