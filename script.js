@@ -104,3 +104,46 @@ document.addEventListener('DOMContentLoaded', function() {
   // Initial load
   displayResume(resumes[currentResumeIndex]);
 });
+
+
+
+
+function animateCard(direction) {
+  if (direction === 'right') {
+      resumeCard.classList.add('swipe-right');
+  } else if (direction === 'left') {
+      resumeCard.classList.add('swipe-left');
+  }
+
+  setTimeout(() => {
+      resumeCard.classList.remove('swipe-right', 'swipe-left');
+      nextResume();
+  }, 500);
+}
+
+likeButton.addEventListener('click', function() {
+  console.log('Liked!');
+
+  document.body.style.backgroundColor = 'green'; // Set the background color to green
+
+    setTimeout(() => {
+        document.body.style.backgroundColor = 'black'; // Set the background color back to black after 2 seconds
+    }, 1000);
+
+  animateCard('right');
+  
+
+});
+
+dislikeButton.addEventListener('click', function() {
+  console.log('Disliked!');
+
+  document.body.style.backgroundColor = 'red'; // Set the background color to green
+
+    setTimeout(() => {
+        document.body.style.backgroundColor = 'black'; // Set the background color back to black after 2 seconds
+    }, 1000);
+
+  animateCard('left');
+  document.body.style.backgroundColor = 'red';
+});
